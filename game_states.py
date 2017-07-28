@@ -17,7 +17,8 @@ class Game_States():
         self.game_active = False
         
         #不重置最高得分
-        self.high_score = 0
+        with open("high_score.txt") as score_load:
+            self.high_score = int(score_load.read())
         
     def reset_states(self):
         self.ships_left = self.ai_setting.ship_limit

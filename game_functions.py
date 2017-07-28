@@ -21,6 +21,8 @@ def check_down_event(event, ai_setting, screen, sb, ship, bullets, states, alien
     elif event.key == pygame.K_SPACE:
         fire_bullet(ai_setting, screen, ship, bullets)
     elif event.key == pygame.K_q:
+        with open("high_score.txt","w") as high_score:
+            high_score.write(str(states.score))
         sys.exit()
     elif event.key == pygame.K_p:
         start_game(ai_setting, states, screen, sb, ship, bullets, aliens)
